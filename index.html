@@ -16,8 +16,11 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background: rgb(105,187,212);
-background: linear-gradient(81deg, rgba(105,187,212,1) 0%, rgba(193,124,255,1) 100%);
+
+        overflow: hidden;
+
+        background: rgb(139,91,226);
+        background: linear-gradient(329deg, rgba(139,91,226,1) 0%, rgba(33,49,80,1) 100%);
       }
       .title{
         border: 0px solid white;
@@ -33,6 +36,8 @@ background: linear-gradient(81deg, rgba(105,187,212,1) 0%, rgba(193,124,255,1) 1
         border-radius: 10px;
         padding: 5px 4px;
         background-color:white;
+        background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(169,236,255,1) 100%);
         
       }
       .title .icons h1{text-align: center;
@@ -135,10 +140,80 @@ background: linear-gradient(81deg, rgba(105,187,212,1) 0%, rgba(193,124,255,1) 1
         opacity: 1;
       }
     }
+
+
+    .rain{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+  }
+  .rain img{
+      top: -200px;
+      position: relative;
+      margin: 0 10px;
+      border-radius: 100%;
+      width: 46px;
+      height: 46px;
+      border: 0px solid;
+      animation: float 10s linear infinite;
+      animation-duration: calc(180s/var(--i));
+      transition: 0.3s;
+  }
+  .rain img:hover{
+    transform: scale(2);
+  }
+  @keyframes float {
+      0%  { transform: translateY(0px)  rotate(30deg) scale(1);   }
+      40%  { transform: translateY(300px)  translateX(50px) rotate(180deg) ;  }
+      70% { transform: translateY(600px) translateX(80px) rotate(360deg) ; }
+      100%{ transform: translateY(1100px) translateX(90px) rotate(580deg) scale(0);   }
+  }
+
+
     </style>
 
   </head>
   <body>
+
+
+    <div class="rain">
+        
+      <img style="--i:14" src="resource\x1.png"    />
+      <img style="--i:28" src="resource\x2.png"    />
+      <img style="--i:17" src="resource\o1.png"    />
+      <img style="--i:11" src="resource\o2.png"    />         
+      <img style="--i:16" src="resource\x2.png"    />
+      <img style="--i:13" src="resource\o1.png"    />
+      <img style="--i:18" src="resource\o2.png"    />         
+      <img style="--i:36" src="resource\x2.png"    />
+      <img style="--i:28" src="resource\x2.png"    />
+      <img style="--i:14" src="resource\o1.png"    />
+      <img style="--i:44" src="resource\o2.png"    /> 
+      <img style="--i:15" src="resource\x2.png"    />
+      <img style="--i:11" src="resource\o1.png"    />
+      <img style="--i:17" src="resource\o2.png"    />         
+      <img style="--i:13" src="resource\x2.png"    />  
+      <img style="--i:19" src="resource\x1.png"    />
+      <img style="--i:28" src="resource\x2.png"    />
+      <img style="--i:12" src="resource\o1.png"    />
+      <img style="--i:16" src="resource\o2.png"    />         
+      <img style="--i:13" src="resource\x2.png"    />
+      <img style="--i:19" src="resource\o1.png"    />
+      <img style="--i:13" src="resource\o2.png"    />         
+      <img style="--i:11" src="resource\x2.png"    />
+      <img style="--i:28" src="resource\x2.png"    />
+      <img style="--i:22" src="resource\o1.png"    />
+      <img style="--i:10" src="resource\o2.png"    /> 
+      <img style="--i:6" src="resource\x2.png"    />
+      <img style="--i:13" src="resource\o1.png"    />
+      <img style="--i:11" src="resource\o2.png"    />         
+      <img style="--i:16" src="resource\x2.png"    />       
+
+  </div>    
     <div id="pop">
       <h2 id="popmsg">Match Draw</h2>
     </div>
@@ -185,14 +260,19 @@ background: linear-gradient(81deg, rgba(105,187,212,1) 0%, rgba(193,124,255,1) 1
   var td = xox.querySelectorAll('td');
   var blockFlag = true;
   var won=false;
+  var play = true;
 
   for (var i=0; i<td.length; i++)
   {
     td[i].addEventListener("click",function(){
+      setTimeout(function() {
+        
+      }, 1000);
       if(!won){
       var row = this.parentNode.rowIndex;
       var col = this.cellIndex;
-      if(this.innerHTML==''){
+      if(this.innerHTML=='' && play==true){
+        play = false;
       this.innerHTML='x';
       this.style.background = "black";   
 
@@ -205,8 +285,12 @@ background: linear-gradient(81deg, rgba(105,187,212,1) 0%, rgba(193,124,255,1) 1
       return;
     }
 
+    setTimeout(function() {
+        
+    
       blockFlag = true;
       move();
+     
       won=false;
       checkForWin();
       if(won){
@@ -218,10 +302,14 @@ background: linear-gradient(81deg, rgba(105,187,212,1) 0%, rgba(193,124,255,1) 1
     }
       if(blockFlag)
       block();
+      play = true;
+    
+    }, 400);
     }
       else
-      alert('Already Marked!Choose any other Box');      
+      alert('Already Marked! Choose some other Box');      
       }
+      
   })
   }
 
@@ -250,9 +338,9 @@ background: linear-gradient(81deg, rgba(105,187,212,1) 0%, rgba(193,124,255,1) 1
             cellA.style.opacity = 1;           
             cellB.style.opacity = 1;
             cellC.style.opacity = 1;
-            cellA.style.boxShadow = "0 0 20px 5px rgba(255, 255, 255, 0.9)";
-            cellB.style.boxShadow = "0 0 20px 5px rgba(255, 255, 255, 0.9)";
-            cellC.style.boxShadow = "0 0 20px 5px rgba(255, 255, 255, 0.9)";
+            cellA.style.boxShadow = "0 0 20px 8px rgba(255, 255, 255, 0.9)";
+            cellB.style.boxShadow = "0 0 20px 8px rgba(255, 255, 255, 0.9)";
+            cellC.style.boxShadow = "0 0 20px 8px rgba(255, 255, 255, 0.9)";
             cellA.classList.add('win-animation');
             cellB.classList.add('win-animation');
             cellC.classList.add('win-animation');
@@ -273,6 +361,7 @@ document.getElementById("playAgain").addEventListener("click",function(){
     cell.classList.remove('win-animation');
   }
   document.getElementById('pop').style.animation="none";
+  play = true;
  })
 
   function move(){
