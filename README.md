@@ -2,7 +2,7 @@
 
 Welcome to the Tic-Tac-Toe game repository! This simple game is built using HTML, CSS, and JavaScript, offering a classic gaming experience that you can enjoy directly from your web browser. The rules are straightforward: the first move is played by the user, who is assigned the symbol 'X'. The computer, represented by the symbol 'O', then makes its move. The objective is to place three marks in a vertical, horizontal, or diagonal row to win the game. If all the boxes are filled and no player has won, the game ends in a draw.
 
-Enjoy the nostalgic fun of Tic-Tac-Toe and challenge yourself against the AI opponent! Feel free to reach out if you have any questions or feedback.
+Enjoy the nostalgic fun of Tic-Tac-Toe and challenge yourself against the my js code! Feel free to reach out if you have any questions or feedback.
 
 *[Play the Game](https://nithishgitsrc.github.io/Tic-tac-toe/)*
 
