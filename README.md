@@ -26,10 +26,12 @@ Enjoy the nostalgic fun of Tic-Tac-Toe and challenge yourself against the my js 
 - JavaScript-powered opponent (Symbol 'O') for single-player mode.
 
 ## ScreenShots
-![TIC_TAC_TOE_HOME](screenshots/TIC_TAC_TOE_HOME.png)
-![TIC_TAC_TOE_WIN](screenshots/TIC_TAC_TOE_WIN.png)
-![TIC_TAC_TOE_DRAW](screenshots/TIC_TAC_TOE_DRAW.png)
-![TIC_TAC_TOE_LOST](screenshots/TIC_TAC_TOE_LOST.png)
+
+![TIC_TAC_TOE_HOME](https://github.com/NithishGitSrc/Tic-tac-toe/assets/126682106/d297f744-91ee-474f-96fb-4a568db91786)
+![TIC_TAC_TOE_WIN](https://github.com/NithishGitSrc/Tic-tac-toe/assets/126682106/94307323-79f7-4e73-b210-857f1adb2bae)
+![TIC_TAC_TOE_DRAW](https://github.com/NithishGitSrc/Tic-tac-toe/assets/126682106/f9866961-b878-41a4-93ef-99f86c276c81)
+![TIC_TAC_TOE_LOST](https://github.com/NithishGitSrc/Tic-tac-toe/assets/126682106/92423a49-c7ea-46df-b596-c4b9fe962c01)
+
 
 ## Technologies Used
 
